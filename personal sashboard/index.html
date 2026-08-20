@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="clock-section">
+                <div id="clock" class="clock"></div>
+                <div id="date" class="date"></div>
+            </div>
+            <div class="greeting" id="greeting"></div>
+        </header>
+
+        <div class="grid">
+            <div class="card weather-card">
+                <h2>Wetter</h2>
+                <div id="weather" class="weather-content">
+                    <div class="weather-loading">Lade Wetter...</div>
+                </div>
+            </div>
+
+            <div class="card todo-card">
+                <h2>To-Do Liste</h2>
+                <div class="todo-input">
+                    <input type="text" id="todoInput" placeholder="Neue Aufgabe..." />
+                    <button id="addTodo" class="btn-primary">+</button>
+                </div>
+                <ul id="todoList" class="todo-list"></ul>
+            </div>
+
+            <div class="card notes-card">
+                <h2>Notizen</h2>
+                <textarea id="notes" placeholder="Notizen hier eingeben..." rows="8"></textarea>
+                <button id="saveNotes" class="btn-primary btn-save">Speichern</button>
+            </div>
+           <center> <div class="card news-card">
+                <h2>News</h2>
+                <div id="news" class="news-content">
+                    <div class="news-loading">Lade Nachrichten...</div>
+                </div>
+            </div>
+        </div>
+    </div> </center>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
