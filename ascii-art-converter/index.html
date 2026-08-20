@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Konverter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ASCII ART</h1>
+            <p class="subtitle">Bild → ASCII Konverter</p>
+        </header>
+
+        <div class="upload-area" id="dropZone">
+            <div class="upload-icon">📁</div>
+            <p>Bild hierher ziehen oder klicken zum Auswählen</p>
+            <input type="file" id="fileInput" accept="image/*" hidden />
+            <button class="btn-primary" id="uploadBtn">Bild auswählen</button>
+        </div>
+
+        <div class="controls" id="controls" style="display: none;">
+            <div class="control-group">
+                <label>Breite (Zeichen)</label>
+                <input type="range" id="widthSlider" min="40" max="300" value="120" />
+                <span id="widthValue">120</span>
+            </div>
+            <div class="control-group">
+                <label>Zeichensatz</label>
+                <select id="charSet">
+                    <option value="standard">Standard</option>
+                    <option value="blocks">Blöcke</option>
+                    <option value="dots">Punkte</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="detailed">Detailliert</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Invertieren</label>
+                <input type="checkbox" id="invertCheck" />
+            </div>
+            <div class="btn-group">
+                <button class="btn-primary" id="convertBtn">Konvertieren</button>
+                <button class="btn-secondary" id="copyBtn">Kopieren</button>
+                <button class="btn-secondary" id="downloadBtn">Herunterladen</button>
+            </div>
+        </div>
+
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-header">
+                <h2>Vorschau</h2>
+                <div class="preview-info">
+                    <span id="charCount"></span>
+                    <span id="lineCount"></span>
+                </div>
+            </div>
+            <pre id="asciiOutput" class="ascii-output"></pre>
+        </div>
+
+        <div class="original-preview" id="originalPreview" style="display: none;">
+            <h2>Original</h2>
+            <img id="originalImage" />
+        </div>
+
+        <canvas id="canvas" style="display: none;"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
